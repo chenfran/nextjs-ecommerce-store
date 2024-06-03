@@ -1,3 +1,5 @@
+import ConfirmOrderButton from '../ConfirmOrderButton';
+
 export const metadata = {
   title: 'Checkout',
 };
@@ -51,7 +53,7 @@ export default function Checkout() {
           id="Security code"
           data-test-id="checkout-security-code"
         />
-        <button data-test-id="checkout-confirm-order">Confirm order</button>
+        <ConfirmOrderButton />
       </form>
     </div>
   );
