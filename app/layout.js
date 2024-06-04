@@ -26,7 +26,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <nav>
+        <nav className="nav-links">
           <Link href="/">Home</Link>
           <Link href="/checkout">Checkout</Link>
           <Link href="/products">Products</Link>
@@ -34,6 +34,43 @@ export default function RootLayout({ children }) {
           <Link href="/thank-you">Thank you</Link>
         </nav>
         {children}
+        <footer class="footer">
+          <div class="footer-container">
+            <div class="footer-section about">
+              <h3>About Us</h3>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Curabitur ut libero ac erat placerat fermentum.
+              </p>
+            </div>
+            <div class="footer-section links">
+              <h3>Quick Links</h3>
+              <ul>
+                <li>
+                  <a href="#home">Home</a>
+                </li>
+                <li>
+                  <a href="#about">About</a>
+                </li>
+                <li>
+                  <a href="#services">Services</a>
+                </li>
+                <li>
+                  <a href="#contact">Contact</a>
+                </li>
+              </ul>
+            </div>
+            <div class="footer-section contact">
+              <h3>Contact Us</h3>
+              <p>Email: contact@example.com</p>
+              <p>Phone: +1 234 567 890</p>
+              <p>Address: 123 Street Name, City, Country</p>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            &copy; 2024 MyWebsite | Designed by YourName
+          </div>
+        </footer>
       </body>
     </html>
   );
