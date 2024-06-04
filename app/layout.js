@@ -33,17 +33,19 @@ export default function RootLayout({ children }) {
           <Link href="/shopping-cart">Shopping Basket</Link>
           <Link href="/thank-you">Thank you</Link>
         </nav>
+        {Math.floor(Math.random() * 10)}
+
         {children}
-        <footer class="footer">
-          <div class="footer-container">
-            <div class="footer-section about">
+        <footer className="footer">
+          <div className="footer-container">
+            <div className="footer-section about">
               <h3>About Us</h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Curabitur ut libero ac erat placerat fermentum.
               </p>
             </div>
-            <div class="footer-section links">
+            <div className="footer-section links">
               <h3>Quick Links</h3>
               <ul>
                 <li>
@@ -60,14 +62,14 @@ export default function RootLayout({ children }) {
                 </li>
               </ul>
             </div>
-            <div class="footer-section contact">
+            <div className="footer-section contact">
               <h3>Contact Us</h3>
               <p>Email: contact@example.com</p>
               <p>Phone: +1 234 567 890</p>
               <p>Address: 123 Street Name, City, Country</p>
             </div>
           </div>
-          <div class="footer-bottom">
+          <div className="footer-bottom">
             &copy; 2024 MyWebsite | Designed by YourName
           </div>
         </footer>

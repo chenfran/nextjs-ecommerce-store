@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import allProducts from '../public/product-overview.webp';
-import styles from './page.module.css';
+import ConfirmOrderButton from './ConfirmOrderButton';
 
 export default function Home() {
   return (
     <div>
+      <ConfirmOrderButton />
       <main>
         <Image src={allProducts} alt="All products" priority />
         <h1>Why Choose Iron Pearl Creations?</h1>
