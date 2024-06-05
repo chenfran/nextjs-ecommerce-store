@@ -11,7 +11,7 @@ export default function Products() {
 
   return (
     <div>
-      This are my products
+      All earrings
       {products.map((product) => {
         return (
           <div key={`products-${product.id}`}>

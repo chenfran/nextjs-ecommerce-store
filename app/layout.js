@@ -1,5 +1,6 @@
-import './globals.css';
+import './globals.scss';
 import localFont from 'next/font/local';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const geistSans = localFont({
@@ -26,53 +27,18 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <nav className="nav-links">
-          <Link href="/">Home</Link>
-          <Link href="/checkout">Checkout</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/shopping-cart">Shopping Basket</Link>
-          <Link href="/thank-you">Thank you</Link>
+        <nav>
+          <Link href="/">
+            <Image src="/home.svg" alt="/" width={30} height={30} />
+          </Link>
+          <Link href="/shopping-cart">
+            <Image src="/basket.svg" alt="/" width={30} height={30} />{' '}
+            {Math.floor(Math.random() * 10)}
+          </Link>
         </nav>
-        {Math.floor(Math.random() * 10)}
 
         {children}
-        <footer className="footer">
-          <div className="footer-container">
-            <div className="footer-section about">
-              <h3>About Us</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                Curabitur ut libero ac erat placerat fermentum.
-              </p>
-            </div>
-            <div className="footer-section links">
-              <h3>Quick Links</h3>
-              <ul>
-                <li>
-                  <a href="#home">Home</a>
-                </li>
-                <li>
-                  <a href="#about">About</a>
-                </li>
-                <li>
-                  <a href="#services">Services</a>
-                </li>
-                <li>
-                  <a href="#contact">Contact</a>
-                </li>
-              </ul>
-            </div>
-            <div className="footer-section contact">
-              <h3>Contact Us</h3>
-              <p>Email: contact@example.com</p>
-              <p>Phone: +1 234 567 890</p>
-              <p>Address: 123 Street Name, City, Country</p>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            &copy; 2024 MyWebsite | Designed by YourName
-          </div>
-        </footer>
+        <footer>Created by Franziska Chen, Vienna 2024</footer>
       </body>
     </html>
   );

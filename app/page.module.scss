@@ -1,0 +1,39 @@
+.imageContainer {
+  // background-color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 50px;
+  img {
+    border-radius: 8px;
+  }
+}
+
+.moreProductsLink {
+  // background-color: lightcoral;
+  text-align: center;
+  padding-bottom: 50px;
+  a {
+    text-decoration: none;
+    border-radius: 8px;
+    color: white;
+    background-color: darkcyan;
+    text-align: center;
+    padding: 15px 25px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: yellowgreen;
+    }
+  }
+}
+
+.community {
+  text-align: center;
+  padding: 50px;
+  color: #333;
+
+  h2 {
+    padding-bottom: 30px;
+  }
+}
