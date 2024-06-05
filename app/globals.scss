@@ -12,12 +12,12 @@ $font-family: 'Roboto', 'sans-serif';
 }
 
 body {
-  background-color: $background-color;
+  // background-color: $background-color;
   font-family: $font-family;
 }
 
 nav {
-  background-color: blueviolet;
+  // background-color: blueviolet;
   display: flex;
   justify-content: space-between;
   padding: 25px;
@@ -31,9 +31,9 @@ nav {
   }
 }
 
-div {
-  background-color: red;
-}
+// div {
+//   background-color: red;
+// }
 
 footer {
   background-color: white;
