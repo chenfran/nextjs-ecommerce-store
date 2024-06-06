@@ -35,6 +35,20 @@ nav {
 //   background-color: red;
 // }
 
+button {
+  background-color: #fec501;
+  color: #333;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: $background-color 0.3s ease;
+
+  &:hover {
+    background-color: #ecb500;
+  }
+}
+
 footer {
   background-color: white;
   color: #333;
