@@ -1,10 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import GenerateButton from './ConfirmOrderButton';
 import styles from './page.module.scss';
 
 export default function Home() {
   return (
     <div>
+      <GenerateButton />
       <main>
         <div className={styles.imageContainer}>
           <Image
@@ -12,14 +14,22 @@ export default function Home() {
             alt="bonbon earring"
             width={300}
             height={225}
+            priority={true}
           />
           <Image
             src="/chicken.webp"
             alt="chicken earring"
             width={300}
             height={225}
+            priority={true}
           />
-          <Image src="/dino.webp" alt="dino earring" width={300} height={225} />
+          <Image
+            src="/dino.webp"
+            alt="dino earring"
+            width={300}
+            height={225}
+            priority={true}
+          />
         </div>
 
         <div className={styles.moreProductsLink}>

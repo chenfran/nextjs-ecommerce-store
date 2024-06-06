@@ -12,7 +12,7 @@ export default function Products() {
 
   return (
     <div className={styles.productPage}>
-      <h2>All earrings</h2>
+      <h1>All earrings</h1>
       <div className={styles.imageContainer}>
         {products.map((product) => {
           return (

@@ -2,6 +2,7 @@ import './globals.scss';
 import localFont from 'next/font/local';
 import Image from 'next/image';
 import Link from 'next/link';
+import CookieBanner from './CookieBanner';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -32,13 +33,14 @@ export default function RootLayout({ children }) {
             <Image src="/home.svg" alt="/" width={30} height={30} />
           </Link>
           <Link href="/shopping-cart">
-            <Image src="/basket.svg" alt="/" width={30} height={30} />{' '}
-            {Math.floor(Math.random() * 10)}
+            <Image src="/basket.svg" alt="/" width={30} height={30} />
+            <span>{Math.floor(Math.random() * 10)}</span>
           </Link>
         </nav>
 
         {children}
         <footer>Created by Franziska Chen, Vienna 2024</footer>
+        <CookieBanner />
       </body>
     </html>
   );
