@@ -20,7 +20,15 @@ nav {
   // background-color: blueviolet;
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background-color: #e0f7fa;
   padding: 25px;
+  margin-bottom: 45px;
+
+  a {
+    color: #333;
+    text-decoration: none;
+  }
 
   img {
     transition: transform 0.3s;
