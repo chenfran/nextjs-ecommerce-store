@@ -4,24 +4,24 @@
 }
 
 .column {
+  // background-color: #333; // placeholder
   float: left;
   width: 50%;
   padding: 10px;
-  // background-color: #333;
   height: 500px;
   margin-top: 2rem;
 }
 
 .columnRight {
+  // background-color: red; // placeholder
   composes: column;
   padding-top: 10rem;
   line-height: 1.5;
   text-align: left;
-  // background-color: red;
 }
 
 .row {
-  // background-color: blue;
+  // background-color: blue; // placeholder
   display: flex;
   text-align: center;
 }

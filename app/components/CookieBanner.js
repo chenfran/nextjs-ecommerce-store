@@ -1,21 +1,21 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { getLocalStorage, setLocalStorage } from '../util/localStorage';
+import { getLocalStorage, setLocalStorage } from '../../util/localStorage';
 import styles from './CookieBanner.module.scss';
 
 export default function CookieBanner() {
   const [areCookiesAccepted, setAreCookiesAccepted] = useState(false);
 
-  // useEffect(() => {
-  //   const localStorageValue = getLocalStorage('cookiePolicy');
+  useEffect(() => {
+    const localStorageValue = getLocalStorage('cookiePolicy');
 
-  //   if (localStorageValue) {
-  //     setAreCookiesAccepted(localStorageValue);
-  //   } else {
-  //     setAreCookiesAccepted(false);
-  //   }
-  // }, []);
+    if (localStorageValue) {
+      setAreCookiesAccepted(localStorageValue);
+    } else {
+      setAreCookiesAccepted(false);
+    }
+  }, []);
 
   return (
     <div

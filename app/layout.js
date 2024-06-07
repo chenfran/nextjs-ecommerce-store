@@ -1,8 +1,8 @@
 import './globals.scss';
 import localFont from 'next/font/local';
-import Image from 'next/image';
-import Link from 'next/link';
-import CookieBanner from './CookieBanner';
+import CookieBanner from './components/CookieBanner';
+import Footer from './components/footer';
+import NavBar from './components/navBar';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -28,19 +28,10 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <nav>
-          <Link href="/">
-            <Image src="/home.svg" alt="/" width={30} height={30} />
-          </Link>
-          <Link href="/shopping-cart">
-            <Image src="/basket.svg" alt="/" width={30} height={30} />
-            <span>{Math.floor(Math.random() * 10)}</span>
-          </Link>
-        </nav>
-
+        <NavBar />
         {children}
-        <footer>Created by Franziska Chen, Vienna 2024</footer>
         <CookieBanner />
+        <Footer />
       </body>
     </html>
   );

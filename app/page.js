@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import GenerateButton from './ConfirmOrderButton';
+import GenerateButton from './components/ConfirmOrderButton';
 import styles from './page.module.scss';
 
 export default function Home() {

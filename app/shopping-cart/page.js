@@ -18,7 +18,13 @@ export default function ShoppingCart() {
                 <h2>Product Name</h2>
                 <p>Price: $50</p>
                 <label htmlFor="quantity1">Quantity:</label>
-                <input type="number" id="quantity1" name="quantity1" min="1" />
+                <input
+                  type="number"
+                  value="1"
+                  id="quantity1"
+                  name="quantity1"
+                  min="1"
+                />
               </div>
               <button className={styles.removeItemButton}>Remove</button>
             </div>
