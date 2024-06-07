@@ -20,7 +20,7 @@ export default function ProductPage(props) {
   }
 
   return (
-    <div>
+    <div className={styles.productPage}>
       <h1>{singleProduct.subject}</h1>
       <div className={styles.row}>
         <div className={styles.column}>
@@ -32,7 +32,23 @@ export default function ProductPage(props) {
           />
         </div>
         <div className={styles.columnRight}>
-          Lorem ipsum text and so on {singleProduct.subject}
+          <h4>Iron Pearl {singleProduct.subject} Earring</h4>
+          <div>
+            Embrace adorable charm with our Iron Pearl Panda Single Earring.
+            This whimsical piece features a playful panda design crafted from
+            premium iron pearls, exuding both cuteness and elegance. Perfect for
+            adding a touch of personality to your look, whether you're heading
+            to a casual outing or a fun-filled event. Elevate your style with
+            the irresistible charm of our Panda Single Earring.
+          </div>
+          <br />
+          <div className={styles.priceTag}>
+            {singleProduct.price}0 {singleProduct.valuta}
+          </div>
+          <br />
+          <div>
+            <button>Add to Cart</button>
+          </div>
         </div>
       </div>
     </div>

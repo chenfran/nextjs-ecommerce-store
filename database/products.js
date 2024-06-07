@@ -1,7 +1,7 @@
 import 'server-only';
 
 const products = [
-  { id: 1, subject: 'Chicken', price: 7, valuta: 'EUR', segue: '' },
+  { id: 1, subject: 'Chicken', price: 7.0, valuta: 'EUR', segue: '' },
   { id: 2, subject: 'Bonbon', price: 7.5, valuta: 'EUR', segue: '' },
   { id: 3, subject: 'Circle', price: 7.5, valuta: 'EUR', segue: '' },
   { id: 4, subject: 'Dino', price: 7.5, valuta: 'EUR', segue: '' },

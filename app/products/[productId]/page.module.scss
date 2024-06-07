@@ -1,32 +1,32 @@
+.productPage {
+  box-sizing: border-box;
+  text-align: center;
+}
+
 .column {
   float: left;
   width: 50%;
   padding: 10px;
-  background-color: #333;
+  // background-color: #333;
   height: 500px;
+  margin-top: 2rem;
 }
 
 .columnRight {
   composes: column;
-  background-color: red;
+  padding-top: 10rem;
+  line-height: 1.5;
+  text-align: left;
+  // background-color: red;
 }
 
-.row::after {
-  content: '';
-  display: table;
-  clear: both;
+.row {
+  // background-color: blue;
+  display: flex;
+  text-align: center;
 }
 
-// .column {
-//   float: left;
-//   width: 50%;
-//   padding: 10px;
-//   height: 300px; /* Should be removed. Only for demonstration */
-// }
-
-// /* Clear floats after the columns */
-// .row:after {
-//   content: "";
-//   display: table;
-//   clear: both;
-// }
+.priceTag {
+  font-size: 1.5em;
+  color: #333;
+}
