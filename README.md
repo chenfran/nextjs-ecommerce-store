@@ -101,6 +101,11 @@ This project should also include tests written for the following functionality:
   - Setup instructions
   - Deployment instructions
 
+## Technologies
+
+- Next.js
+- Postgres
+
 ## Stretch goals
 
 - Loading indicator (text or animation) that displays during loading of a page, including an HTML element with the attribute `data-test-id="loading"`

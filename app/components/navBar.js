@@ -7,6 +7,9 @@ export default function NavBar() {
       <Link href="/">
         <Image src="/home.svg" alt="/" width={30} height={30} />
       </Link>
+      <Link href="/products">Products</Link>
+      <Link href="/checkout">Checkout</Link>
+      <Link href="/thank-you">Thank you</Link>
       <Link href="/shopping-cart">
         <Image src="/basket.svg" alt="/" width={30} height={30} />
         <span>{Math.floor(Math.random() * 10)}</span>

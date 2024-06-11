@@ -1,19 +1,27 @@
+import { cookies } from 'next/headers';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
-import { getProduct } from '../../../database/products';
+import { getProductInsecure } from '../../../database/products';
+import FruitCommentForm from './AddToBasketForm';
 import styles from './page.module.scss';
 
-export function generateMetadata(props) {
-  const singleProduct = getProduct(Number(props.params.productId));
+export async function generateMetadata(props) {
+  const singleProduct = await getProductInsecure(
+    Number(props.params.productId),
+  );
 
   return {
-    title: singleProduct?.subject,
+    title: singleProduct?.name,
     description: 'Single Product Page',
   };
 }
 
-export default function ProductPage(props) {
-  const singleProduct = getProduct(Number(props.params.productId));
+export default async function ProductPage(props) {
+  const singleProduct = await getProductInsecure(
+    Number(props.params.productId),
+  );
+
+  console.log(singleProduct);
 
   if (!singleProduct) {
     notFound();
@@ -21,18 +29,18 @@ export default function ProductPage(props) {
 
   return (
     <div className={styles.productPage}>
-      <h1>{singleProduct.subject}</h1>
+      <h1>{singleProduct.name}</h1>
       <div className={styles.row}>
         <div className={styles.column}>
           <Image
-            src={`/${singleProduct.subject.toLowerCase()}.webp`}
-            alt={singleProduct.subject}
+            src={`/${singleProduct.name.toLowerCase()}.webp`}
+            alt={singleProduct.name}
             width={600}
             height={450}
           />
         </div>
         <div className={styles.columnRight}>
-          <h4>Iron Pearl {singleProduct.subject} Earring</h4>
+          <h4>Iron Pearl {singleProduct.name} Earring</h4>
           <div>
             Embrace adorable charm with our Iron Pearl Panda Single Earring.
             This whimsical piece features a playful panda design crafted from
@@ -47,7 +55,7 @@ export default function ProductPage(props) {
           </div>
           <br />
           <div>
-            <button>Add to Cart</button>
+            <FruitCommentForm singleProductId={singleProduct.id} />
           </div>
         </div>
       </div>
