@@ -1,8 +1,10 @@
+import { cookies } from 'next/headers';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductInsecure } from '../../../database/products';
-import { AddToCartButton } from './AddToCartButton';
-import { HandleQuantity } from './HandleQuantityChange.js';
+import AddToCartButton from '../../components/AddToCartButton';
+import HandleQuantityChange from '../../components/AddToCartComponent';
+import FruitCommentForm from './FruitCommentPage';
 
 export async function generateMetadata(props) {
   const singleProduct = await getProductInsecure(
@@ -15,20 +17,36 @@ export async function generateMetadata(props) {
   };
 }
 
-export default async function ProductPage(props) {
+export default async function SingleProductPage(props) {
   const singleProduct = await getProductInsecure(
     Number(props.params.productId),
   );
-
-  console.log(singleProduct);
 
   if (!singleProduct) {
     notFound();
   }
 
+  // Fruit example START
+  // const shoppingCartCookie = cookies().get('shoppingCart');
+  // // ?.value;
+  // console.log('SHOPPINGCARTCOOKIE', shoppingCartCookie);
+
+  // const shoppingCart = JSON.parse(shoppingCartCookie);
+  // const shoppingCartItemToDisplay = shoppingCart.find((item) => {
+  //   return item.id === singleProduct.id;
+  // });
+  // Fruit example END
+
   return (
     <div>
       <h1>{singleProduct.name}</h1>
+
+      {/* Fruit example START */}
+      <h2>Fruit Example</h2>
+      {/* <div>{shoppingCartItemToDisplay?.comment}</div> */}
+      {/* <FruitCommentForm fruitId={singleProduct.id} /> */}
+      {/* Fruit example END */}
+
       <div>
         <div>
           <Image
@@ -50,8 +68,8 @@ export default async function ProductPage(props) {
           </div>
           <br />
           <div>{singleProduct.price} EUR</div>
-          <HandleQuantity />
-          <AddToCartButton />
+          {/* <HandleQuantityChange product={singleProduct} /> */}
+          <AddToCartButton product={singleProduct} />
         </div>
       </div>
     </div>

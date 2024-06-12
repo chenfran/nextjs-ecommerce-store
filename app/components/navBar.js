@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import { CartItemCount } from './DisplayCartItemCount';
 
 export default function NavBar() {
   return (
@@ -24,7 +23,6 @@ export default function NavBar() {
         <li>
           <Link href="/shopping-cart">
             <Image src="/basket.svg" alt="/" width={30} height={30} />
-            <CartItemCount />
           </Link>
         </li>
       </ul>

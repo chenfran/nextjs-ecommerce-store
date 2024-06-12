@@ -13,6 +13,7 @@
   "dependencies": {
     "@upleveled/ley": "^0.8.6",
     "dotenv-safe": "^9.1.0",
+    "js-cookie": "^3.0.5",
     "next": "15.0.0-canary.2",
     "postgres": "^3.4.4",
     "react": "19.0.0-rc-f994737d14-20240522",
