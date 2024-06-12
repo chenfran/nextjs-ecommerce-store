@@ -1,3 +1,5 @@
+import Products from './products/page';
+
 export default function Home() {
-  return <div>Online-Shop is comming soon ...</div>;
+  return <h1>Home: This is a homepage for the coming online shop!</h1>;
 }

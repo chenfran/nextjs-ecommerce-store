@@ -20,8 +20,8 @@ export default async function Products() {
               <Image
                 src={`/${product.name.toLowerCase()}.webp`}
                 alt="/"
-                width={300}
-                height={225}
+                width={250}
+                height={250}
               />
               <div>{product.price} EUR</div>
             </Link>

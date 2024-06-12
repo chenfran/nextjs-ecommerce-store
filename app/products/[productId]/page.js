@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductInsecure } from '../../../database/products';
-import FruitCommentForm from './AddToBasketForm';
 
 export async function generateMetadata(props) {
   const singleProduct = await getProductInsecure(
@@ -33,8 +32,8 @@ export default async function ProductPage(props) {
           <Image
             src={`/${singleProduct.name.toLowerCase()}.webp`}
             alt={singleProduct.name}
-            width={600}
-            height={450}
+            width={500}
+            height={500}
           />
         </div>
         <div>
@@ -50,10 +49,6 @@ export default async function ProductPage(props) {
           <br />
           <div>
             {singleProduct.price}0 {singleProduct.valuta}
-          </div>
-          <br />
-          <div>
-            <FruitCommentForm singleProductId={singleProduct.id} />
           </div>
         </div>
       </div>

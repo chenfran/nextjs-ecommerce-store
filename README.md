@@ -105,6 +105,7 @@ This project should also include tests written for the following functionality:
 
 - Next.js
 - Postgres
+- Ley for migration
 
 ## Stretch goals
 
