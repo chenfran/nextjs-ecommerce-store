@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductInsecure } from '../../../database/products';
+import { HandleQuantity } from './handleQuantityChange';
 
 export async function generateMetadata(props) {
   const singleProduct = await getProductInsecure(
@@ -47,9 +48,8 @@ export default async function ProductPage(props) {
             the irresistible charm of our Panda Single Earring.
           </div>
           <br />
-          <div>
-            {singleProduct.price}0 {singleProduct.valuta}
-          </div>
+          <div>{singleProduct.price} EUR</div>
+          <HandleQuantity />
         </div>
       </div>
     </div>
