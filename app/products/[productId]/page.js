@@ -1,7 +1,8 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductInsecure } from '../../../database/products';
-import { HandleQuantity } from './handleQuantityChange';
+import { AddToCartButton } from './AddToCartButton';
+import { HandleQuantity } from './HandleQuantityChange.js';
 
 export async function generateMetadata(props) {
   const singleProduct = await getProductInsecure(
@@ -50,6 +51,7 @@ export default async function ProductPage(props) {
           <br />
           <div>{singleProduct.price} EUR</div>
           <HandleQuantity />
+          <AddToCartButton />
         </div>
       </div>
     </div>
