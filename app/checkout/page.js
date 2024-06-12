@@ -1,5 +1,4 @@
 import ConfirmButton from './ConfirmButton';
-import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Checkout',
@@ -7,11 +6,11 @@ export const metadata = {
 
 export default function Checkout() {
   return (
-    <div className={styles.checkoutBody}>
-      <div className={styles.checkoutPage}>
+    <div>
+      <div>
         <h1>Checkout</h1>
-        <div className={styles.checkoutContainer}>
-          <form className={styles.checkoutForm}>
+        <div>
+          <form>
             <h2>Shipping Address</h2>
             <label htmlFor="First name">First name</label>
             <input

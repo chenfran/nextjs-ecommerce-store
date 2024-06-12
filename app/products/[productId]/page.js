@@ -1,9 +1,7 @@
-import { cookies } from 'next/headers';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductInsecure } from '../../../database/products';
 import FruitCommentForm from './AddToBasketForm';
-import styles from './page.module.scss';
 
 export async function generateMetadata(props) {
   const singleProduct = await getProductInsecure(
@@ -28,10 +26,10 @@ export default async function ProductPage(props) {
   }
 
   return (
-    <div className={styles.productPage}>
+    <div>
       <h1>{singleProduct.name}</h1>
-      <div className={styles.row}>
-        <div className={styles.column}>
+      <div>
+        <div>
           <Image
             src={`/${singleProduct.name.toLowerCase()}.webp`}
             alt={singleProduct.name}
@@ -39,7 +37,7 @@ export default async function ProductPage(props) {
             height={450}
           />
         </div>
-        <div className={styles.columnRight}>
+        <div>
           <h4>Iron Pearl {singleProduct.name} Earring</h4>
           <div>
             Embrace adorable charm with our Iron Pearl Panda Single Earring.
@@ -50,7 +48,7 @@ export default async function ProductPage(props) {
             the irresistible charm of our Panda Single Earring.
           </div>
           <br />
-          <div className={styles.priceTag}>
+          <div>
             {singleProduct.price}0 {singleProduct.valuta}
           </div>
           <br />

@@ -40,16 +40,3 @@ function connectOneTimeToDatabase() {
 }
 
 export const sql = connectOneTimeToDatabase();
-
-// import { config } from 'dotenv-safe';
-// import postgres from 'postgres';
-
-// config();
-
-// // Convert key names to camel-case
-// export const sql = postgres({
-//   transform: {
-//     ...postgres.camel,
-//     undefined: null,
-//   },
-// });
