@@ -74,7 +74,7 @@ export default async function ShoppingCart() {
           </ul>
         </div>
       )}
-      <Link href="/checkout">Go to checkout</Link>
+      <Link href="/checkout">Proceed to checkout</Link>
     </div>
   );
 }
