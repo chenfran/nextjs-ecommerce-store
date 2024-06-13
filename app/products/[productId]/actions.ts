@@ -4,35 +4,44 @@ import { cookies } from 'next/headers';
 import { getCookie } from '../../../util/cookies';
 import { parseJson } from '../../../util/json';
 
-export type SetQuantity = {
+// Case A: cookie is undefined (not set)
+// Case B: cookie set, id doesn't exist yet
+// Case C: cookie set, id exists already
+
+export type SetQuantities = {
   id: number;
-  quantities: string;
+  quantity: number;
 };
 
-export async function updateProductInCartForm(
+export async function createOrUpdateShoppingCart(
   productId: number,
-  quantities: string,
+  quantity: number,
 ) {
   // 1. get current cookie
-  const shoppingCartCookies = cookies().get('shoppingCart');
-  console.log('shoppingCartCookies', shoppingCartCookies);
+  const shoppingCartCookies = getCookie('shoppingCart');
 
   // 2. parse the cookie value
-  const shoppingCartCookiesParse: SetQuantity[] = !shoppingCartCookies
-    ? []
+  const shoppingCart: SetQuantities[] = !shoppingCartCookies
+    ? // Case A: cookie is undefined
+      []
     : parseJson(shoppingCartCookies) || [];
 
   // 3. edit the cookie value
-  const shoppingCartToUpdate = shoppingCartCookiesParse.find((cookie) => {
+  const cartToUpdate = shoppingCart.find((cookie) => {
     return cookie.id === productId;
   });
 
-  if (!shoppingCartToUpdate) {
-    shoppingCartCookiesParse.push({ id: productId, quantities: quantities });
+  // Case B: cookie set, id doesn't exist yet
+  if (!cartToUpdate) {
+    shoppingCart.push({
+      id: productId,
+      quantity: quantity,
+    });
   } else {
-    shoppingCartToUpdate.quantities = quantities;
+    // Case C: cookie set, id exists already
+    cartToUpdate.quantity = quantity;
   }
 
-  // 4. override the cookie
-  await cookies().set('shoppingCart', JSON.stringify(shoppingCartCookies));
+  // 4. we override the cookie
+  await cookies().set('shoppingCart', JSON.stringify(shoppingCart));
 }

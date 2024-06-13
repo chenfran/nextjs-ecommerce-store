@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import NavBarForm from './NavBarForm';
 
 export default function NavBar() {
   return (
@@ -23,6 +24,7 @@ export default function NavBar() {
         <li>
           <Link href="/shopping-cart">
             <Image src="/basket.svg" alt="/" width={30} height={30} />
+            <NavBarForm />
           </Link>
         </li>
       </ul>

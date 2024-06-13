@@ -1,4 +1,3 @@
-import { cookies } from 'next/headers';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductInsecure } from '../../../database/products';
@@ -21,19 +20,20 @@ export default async function SingleProductPage(props) {
   const singleProduct = await getProductInsecure(
     Number(props.params.productId),
   );
+  console.log(singleProduct);
 
   if (!singleProduct) {
     notFound();
   }
 
-  // const shoppingCartCookies = getCookie('shoppingCart');
-  // const shoppingCartCookieParse = !shoppingCartCookies
-  //   ? []
-  //   : parseJson(shoppingCartCookies);
+  const shoppingCartCookies = getCookie('shoppingCart');
+  const shoppingCartCookieParse = !shoppingCartCookies
+    ? []
+    : parseJson(shoppingCartCookies);
 
-  // const shoppingCartToDisplay = shoppingCartCookieParse.find((cookie) => {
-  //   return cookie.id === singleProduct.id;
-  // });
+  const shoppingCartToDisplay = shoppingCartCookieParse.find((cookie) => {
+    return cookie.id === singleProduct.id;
+  });
 
   return (
     <div>
@@ -60,7 +60,7 @@ export default async function SingleProductPage(props) {
           <br />
           <div>{singleProduct.price} EUR</div>
           <SetQuantityToCartForm productId={singleProduct.id} />
-          {/* <div>{shoppingCartToDisplay?.quantities}</div> */}
+          <div>{shoppingCartToDisplay?.quantity}</div>
         </div>
       </div>
     </div>
