@@ -20,7 +20,6 @@ export default async function SingleProductPage(props) {
   const singleProduct = await getProductInsecure(
     Number(props.params.productId),
   );
-  console.log(singleProduct);
 
   if (!singleProduct) {
     notFound();
