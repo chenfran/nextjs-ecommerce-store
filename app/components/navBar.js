@@ -13,11 +13,19 @@ export default function NavBar() {
         </Link>
 
         <nav className={styles.navMenu}>
-          <Link className={styles.wNavLink} href="/products">
+          <Link
+            className={styles.wNavLink}
+            href="/products"
+            data-test-id="products-link"
+          >
             ALL PRODUCTS
           </Link>
 
-          <Link className={styles.button} href="/shopping-cart">
+          <Link
+            className={styles.button}
+            href="/shopping-cart"
+            data-test-id="cart-link"
+          >
             <Image src="/cart.svg" alt="/" width={30} height={30} />
             <NavBarForm />
           </Link>

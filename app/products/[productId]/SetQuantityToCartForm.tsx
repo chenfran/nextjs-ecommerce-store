@@ -21,8 +21,16 @@ export default function SetQuantityToCartForm({ productId }: Props) {
 
   return (
     <form>
-      <input type="number" min="1" value={quantity} onChange={handleChange} />
-      <button formAction={handleSubmit}>Add to cart</button>
+      <input
+        type="number"
+        min="1"
+        value={quantity}
+        onChange={handleChange}
+        data-test-id="product-quantity"
+      />
+      <button formAction={handleSubmit} data-test-id="product-add-to-cart">
+        Add to cart
+      </button>
     </form>
   );
 }

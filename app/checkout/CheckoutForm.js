@@ -95,7 +95,7 @@ export default function CheckoutForm() {
               id="Postal code"
               value={postalCode}
               onChange={(event) => setPostalCode(event.currentTarget.value)}
-              data-test-id="checkout-city"
+              data-test-id="checkout-postal-code"
               required
             />
             <label htmlFor="Country">Country</label>
@@ -150,6 +150,7 @@ export default function CheckoutForm() {
                 !expirationDate ||
                 !securityCode
               }
+              data-test-id="checkout-confirm-order"
             >
               Complete Purchase
             </button>

@@ -44,6 +44,7 @@ export default async function SingleProductPage(props) {
             alt={singleProduct.name}
             width={500}
             height={500}
+            data-test-id="product-image"
           />
         </div>
         <div>
@@ -57,7 +58,8 @@ export default async function SingleProductPage(props) {
             the irresistible charm of our Panda Single Earring.
           </div>
           <br />
-          <div>{singleProduct.price} EUR</div>
+          <div data-test-id="product-price">{singleProduct.price}</div>
+          <span> EUR</span>
           <SetQuantityToCartForm productId={singleProduct.id} />
           <div>{shoppingCartToDisplay?.quantity}</div>
         </div>

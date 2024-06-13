@@ -50,14 +50,18 @@ export default async function ShoppingCart() {
         <div>
           <ul>
             {shoppingCartWithItems.map((item) => (
-              <li key={`item-${item.id}`}>
+              <li key={`item-${item.id}`} data-test-id="cart-product-item.id">
                 <Image
                   src={`/${item.name.toLowerCase()}.webp`}
                   alt={item.name}
                   width={150}
                   height={150}
                 />
-                {item.name} - {item.price} EUR - Quantity: {item.quantity}
+                {item.name} - {item.price} EUR - Quantity:{' '}
+                <span data-test-id="cart-product-quantity-item.id">
+                  {item.quantity}
+                </span>
+                Product subtotal: {calculateTotalPriceOfOneItem(item.id)}
                 <ShoppingCartForm productId={item.id} />
               </li>
             ))}
@@ -66,15 +70,22 @@ export default async function ShoppingCart() {
           <ul>
             {shoppingCartWithItems.map((item) => (
               <li key={`item-${item.id}`}>
-                {item.name} {item.price} EUR - Quantity: {item.quantity} - Total
-                Price of this item: {calculateTotalPriceOfOneItem(item.id)}
+                {item.name} {item.price} EUR - Quantity: {item.quantity} -
+                Product subtotal: {calculateTotalPriceOfOneItem(item.id)}
               </li>
             ))}
-            <li>Total price: {calculateTotalPrice()} EUR</li>
+            <li>
+              Total price:{' '}
+              <span data-test-id="cart-total">{calculateTotalPrice()}</span> EUR
+            </li>
           </ul>
         </div>
       )}
-      <Link href="/checkout">Proceed to checkout</Link>
+
+      {/* ❤️‍🩹 HOW-TO: Link to the checkout page with using a button element  */}
+      <button href="/checkout" data-test-id="cart-checkout">
+        Proceed to checkout
+      </button>
     </div>
   );
 }

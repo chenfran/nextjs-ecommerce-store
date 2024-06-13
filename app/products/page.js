@@ -15,7 +15,10 @@ export default async function Products() {
       {products.map((product) => {
         return (
           <div key={`product-${product.id}`}>
-            <Link href={`/products/${product.id}`}>
+            <Link
+              href={`/products/${product.id}`}
+              data-test-id="product-product.id"
+            >
               <h3>{product.name}</h3>
               <Image
                 src={`/${product.name.toLowerCase()}.webp`}

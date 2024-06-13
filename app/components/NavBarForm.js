@@ -31,5 +31,5 @@ export default async function NavBarForm() {
       return null;
     }
   }
-  return <>{displayCartItemCount()}</>;
+  return <span data-test-id="cart-count">{displayCartItemCount()}</span>;
 }

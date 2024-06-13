@@ -11,6 +11,7 @@ export default function ShoppingCartForm(props) {
     <form>
       <button
         formAction={async () => await removeItemFromCart(props.productId)}
+        data-test-id="cart-product-remove-productId"
       >
         Remove item
       </button>
