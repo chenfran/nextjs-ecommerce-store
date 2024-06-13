@@ -18,7 +18,7 @@ export async function createOrUpdateShoppingCart(
   quantity: number,
 ) {
   // 1. get current cookie
-  const shoppingCartCookies = getCookie('shoppingCart');
+  const shoppingCartCookies = getCookie('cart');
 
   // 2. parse the cookie value
   const shoppingCart: SetQuantities[] = !shoppingCartCookies
@@ -39,9 +39,9 @@ export async function createOrUpdateShoppingCart(
     });
   } else {
     // Case C: cookie set, id exists already
-    cartToUpdate.quantity = quantity;
+    cartToUpdate.quantity += quantity;
   }
 
-  // 4. we override the cookie
-  await cookies().set('shoppingCart', JSON.stringify(shoppingCart));
+  // 4. override the cookie
+  await cookies().set('cart', JSON.stringify(shoppingCart));
 }

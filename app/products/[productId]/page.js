@@ -25,7 +25,7 @@ export default async function SingleProductPage(props) {
     notFound();
   }
 
-  const shoppingCartCookies = getCookie('shoppingCart');
+  const shoppingCartCookies = getCookie('cart');
   const shoppingCartCookieParse = !shoppingCartCookies
     ? []
     : parseJson(shoppingCartCookies);

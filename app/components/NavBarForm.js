@@ -7,7 +7,7 @@ import { parseJson } from '../../util/json';
 export default async function NavBarForm() {
   const products = await getProductsInsecure();
 
-  const shoppingCartCookies = getCookie('shoppingCart');
+  const shoppingCartCookies = getCookie('cart');
   const shoppingCart = !shoppingCartCookies
     ? []
     : parseJson(shoppingCartCookies);

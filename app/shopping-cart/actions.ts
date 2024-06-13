@@ -14,7 +14,7 @@ export type NewShoppingCart = {
 
 export async function removeItemFromCart(productId: number) {
   // 1. get current cookie
-  const shoppingCartCookies = getCookie('shoppingCart');
+  const shoppingCartCookies = getCookie('cart');
   console.log(shoppingCartCookies);
 
   // 2. parse the cookie value
@@ -29,5 +29,5 @@ export async function removeItemFromCart(productId: number) {
   });
 
   // 4. we override the cookie
-  await cookies().set('shoppingCart', JSON.stringify(shoppingCartAfterRemove));
+  await cookies().set('cart', JSON.stringify(shoppingCartAfterRemove));
 }

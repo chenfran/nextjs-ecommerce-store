@@ -8,7 +8,7 @@ import ShoppingCartForm from './ShoppingCartForm';
 export default async function ShoppingCart() {
   const products = await getProductsInsecure();
 
-  const shoppingCartCookies = getCookie('shoppingCart');
+  const shoppingCartCookies = getCookie('cart');
 
   const shoppingCart = !shoppingCartCookies
     ? []
