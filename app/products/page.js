@@ -10,19 +10,6 @@ export const metadata = {
 export default async function Products() {
   const products = await getProductsInsecure();
 
-  // // Fruit example START
-  // const fruitsCommentsCookie = cookies().get('fruitComments');
-  // const fruitComments = JSON.parse(fruitsCommentsCookie.value);
-
-  // const fruitsWithComments = products.map((product) => {
-  //   const matchingWithFruitFromCookie = fruitComments.find(
-  //     (fruitObject) => product.id === fruitObject.id,
-  //   );
-  //   return { ...product, comment: matchingWithFruitFromCookie?.comment };
-  // });
-  // console.log(fruitsWithComments);
-  // // Fruit example END
-
   return (
     <div>
       <h1>All Products</h1>
@@ -38,6 +25,7 @@ export default async function Products() {
                 height={250}
               />
               <div>{product.price} EUR</div>
+              <div>{product.quantities}</div>
             </Link>
           </div>
         );

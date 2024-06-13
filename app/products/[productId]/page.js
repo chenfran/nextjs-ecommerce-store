@@ -2,9 +2,9 @@ import { cookies } from 'next/headers';
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductInsecure } from '../../../database/products';
-import AddToCartButton from '../../components/AddToCartButton';
-import HandleQuantityChange from '../../components/AddToCartComponent';
-import FruitCommentForm from './FruitCommentPage';
+import { getCookie } from '../../../util/cookies';
+import { parseJson } from '../../../util/json.ts';
+import SetQuantityToCartForm from './SetQuantityToCartForm.tsx';
 
 export async function generateMetadata(props) {
   const singleProduct = await getProductInsecure(
@@ -26,27 +26,18 @@ export default async function SingleProductPage(props) {
     notFound();
   }
 
-  // Fruit example START
-  // const shoppingCartCookie = cookies().get('shoppingCart');
-  // // ?.value;
-  // console.log('SHOPPINGCARTCOOKIE', shoppingCartCookie);
+  // const shoppingCartCookies = getCookie('shoppingCart');
+  // const shoppingCartCookieParse = !shoppingCartCookies
+  //   ? []
+  //   : parseJson(shoppingCartCookies);
 
-  // const shoppingCart = JSON.parse(shoppingCartCookie);
-  // const shoppingCartItemToDisplay = shoppingCart.find((item) => {
-  //   return item.id === singleProduct.id;
+  // const shoppingCartToDisplay = shoppingCartCookieParse.find((cookie) => {
+  //   return cookie.id === singleProduct.id;
   // });
-  // Fruit example END
 
   return (
     <div>
       <h1>{singleProduct.name}</h1>
-
-      {/* Fruit example START */}
-      <h2>Fruit Example</h2>
-      {/* <div>{shoppingCartItemToDisplay?.comment}</div> */}
-      {/* <FruitCommentForm fruitId={singleProduct.id} /> */}
-      {/* Fruit example END */}
-
       <div>
         <div>
           <Image
@@ -68,8 +59,8 @@ export default async function SingleProductPage(props) {
           </div>
           <br />
           <div>{singleProduct.price} EUR</div>
-          {/* <HandleQuantityChange product={singleProduct} /> */}
-          <AddToCartButton product={singleProduct} />
+          <SetQuantityToCartForm productId={singleProduct.id} />
+          {/* <div>{shoppingCartToDisplay?.quantities}</div> */}
         </div>
       </div>
     </div>
