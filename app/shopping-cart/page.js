@@ -13,8 +13,6 @@ export default async function ShoppingCart() {
     ? []
     : parseJson(shoppingCartCookies);
 
-
-
   const shoppingCartWithItems = products
     .map((product) => {
       const matchingWithProductFromCookie = shoppingCart.find(
@@ -23,6 +21,24 @@ export default async function ShoppingCart() {
       return { ...product, quantity: matchingWithProductFromCookie?.quantity };
     })
     .filter((item) => item.quantity > 0);
+
+  function calculateTotalPrice() {
+    let totalPrice = 0;
+    shoppingCartWithItems.map((item) => {
+      return (totalPrice += item.price * item.quantity);
+    });
+    return totalPrice.toFixed(2); // auf 2 Dezimalstellen runden
+  }
+
+  function calculateTotalPriceOfOneItem(productId) {
+    let totalPrice = 0;
+    shoppingCartWithItems.forEach((item) => {
+      if (item.id === productId) {
+        totalPrice = item.price * item.quantity;
+      }
+    });
+    return totalPrice.toFixed(2);
+  }
 
   return (
     <div>
@@ -49,10 +65,11 @@ export default async function ShoppingCart() {
           <ul>
             {shoppingCartWithItems.map((item) => (
               <li key={`item-${item.id}`}>
-                {item.name} {item.price} EUR
+                {item.name} {item.price} EUR - Quantity: {item.quantity} - Total
+                Price of this item: {calculateTotalPriceOfOneItem(item.id)}
               </li>
             ))}
-            <li>Total price: EUR</li>
+            <li>Total price: {calculateTotalPrice()} EUR</li>
           </ul>
         </div>
       )}
