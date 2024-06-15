@@ -1,19 +1,19 @@
 import './globals.css';
-import localFont from 'next/font/local';
+// import localFont from 'next/font/local';
 import CookieBanner from './components/CookieBanner';
 import Footer from './components/footer';
 import NavBar from './components/navBar';
 
-const geistSans = localFont({
-  src: './fonts/GeistVF.woff',
-  variable: '--font-geist-sans',
-  weight: '100 900',
-});
-const geistMono = localFont({
-  src: './fonts/GeistMonoVF.woff',
-  variable: '--font-geist-mono',
-  weight: '100 900',
-});
+// const geistSans = localFont({
+//   src: './fonts/GeistVF.woff',
+//   variable: '--font-geist-sans',
+//   weight: '100 900',
+// });
+// const geistMono = localFont({
+//   src: './fonts/GeistMonoVF.woff',
+//   variable: '--font-geist-mono',
+//   weight: '100 900',
+// });
 
 export const metadata = {
   title: {
@@ -27,7 +27,8 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body>
+        {/* <body className={`${geistSans.variable} ${geistMono.variable}`}> */}
         <h1 className="text-3xl font-bold underline">Hello world!</h1>
         <NavBar />
         {children}

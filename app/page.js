@@ -4,6 +4,7 @@ export default function Home() {
       <h1 className="text-4xl font-bold text-blue-500">
         Hallo, Next.js mit Tailwind CSS!
       </h1>
+      <h1>Why is it not working</h1>
     </div>
   );
 }
