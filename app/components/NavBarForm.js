@@ -3,7 +3,6 @@
 import { getProductsInsecure } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
-import styles from './navBar.module.scss';
 
 export default async function NavBarForm() {
   const products = await getProductsInsecure();
