@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { getProductsInsecure } from '../../database/products';
-import styles from './page.module.scss';
 
 export const metadata = {
   title: 'Products',
@@ -11,16 +10,15 @@ export default async function Products() {
   const products = await getProductsInsecure();
 
   return (
-    <div className={styles.productContainer}>
+    <div>
       <h1>All Products</h1>
-      <div className={styles.productGrid}>
+      <div>
         {products.map((product) => {
           return (
-            <div key={`product-${product.id}`} className={styles.productCard}>
+            <div key={`product-${product.id}`}>
               <Link
                 href={`/products/${product.id}`}
                 data-test-id="product-product.id"
-                className={styles.productLink}
               >
                 <Image
                   src={`/${product.name.toLowerCase()}.webp`}
