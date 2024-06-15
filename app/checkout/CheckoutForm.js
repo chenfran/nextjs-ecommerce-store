@@ -39,7 +39,6 @@ export default function CheckoutForm() {
   return (
     <div>
       <div>
-        <h1>Checkout</h1>
         <div>
           <form>
             <h2>Shipping Address</h2>

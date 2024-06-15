@@ -1,0 +1,44 @@
+.container {
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.thanksContainer {
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  margin-bottom: 2rem;
+  width: 50vw;
+  box-shadow: 3px 3px 3px 3px black;
+  border-radius: 8px;
+
+  p {
+    font-size: 1.5em;
+    margin-top: 1.5rem;
+  }
+}
+
+.linkContainer {
+  margin-top: 1rem;
+}
+
+.link {
+  color: blue; /* Ändern Sie dies in die gewünschte Farbe */
+  font-weight: bold; /* Macht den Text fett */
+  padding: 0.5rem 1rem; /* Fügen Sie etwas Padding hinzu */
+  border: 2px solid blue; /* Optional: Fügen Sie einen Rand hinzu */
+  border-radius: 5px; /* Optional: Fügen Sie abgerundete Ecken hinzu */
+  transition:
+    background-color 0.3s,
+    color 0.3s; /* Übergangseffekte für Hover */
+
+  &:hover {
+    background-color: blue; /* Hintergrundfarbe beim Hover */
+    color: white; /* Textfarbe beim Hover */
+  }
+}

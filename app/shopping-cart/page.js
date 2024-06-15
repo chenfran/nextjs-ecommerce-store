@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { getProductsInsecure } from '../../database/products';
 import { getCookie } from '../../util/cookies';
 import { parseJson } from '../../util/json';
+import ProccedToCheckout from './ProceedToCheckoutForm';
 import ShoppingCartForm from './ShoppingCartForm';
 
 export default async function ShoppingCart() {
@@ -81,10 +82,7 @@ export default async function ShoppingCart() {
         </div>
       )}
 
-      {/* ❤️‍🩹 HOW-TO: Link to the checkout page with using a button element  */}
-      <button href="/checkout" data-test-id="cart-checkout">
-        Proceed to checkout
-      </button>
+      <ProccedToCheckout />
     </div>
   );
 }

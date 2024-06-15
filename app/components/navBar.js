@@ -5,24 +5,23 @@ import NavBarForm from './NavBarForm';
 
 export default function NavBar() {
   return (
-    <header className={styles.navBar}>
-      <div className={styles.globalContainer}>
-        <Link className={styles.brand} href="/">
-          <Image src="/home.svg" alt="/" width={30} height={30} />
-          <div className={styles.navLink}>HOME</div>
-        </Link>
-
-        <nav className={styles.navMenu}>
+    <header className={styles.headerContainer}>
+      <div className={styles.container}>
+        <nav className={styles.navContainer}>
+          <Link className={styles.navLink} href="/">
+            <Image src="/home.svg" alt="/" width={30} height={30} />
+            {/* <div className={styles.navLink}>HOME</div> */}
+          </Link>
           <Link
-            className={styles.wNavLink}
+            className={styles.navLink}
             href="/products"
             data-test-id="products-link"
           >
-            ALL PRODUCTS
+            PRODUCTS
           </Link>
 
           <Link
-            className={styles.button}
+            className={styles.navLink}
             href="/shopping-cart"
             data-test-id="cart-link"
           >

@@ -8,22 +8,22 @@
   box-sizing: border-box;
   align-items: center;
   text-align: center;
-  //   background: linear-gradient(45deg, #ff5f6d, #ff9190);
-  //   color: #333;
 }
 
 body {
   position: relative;
-  margin-top: 100px;
-  color: white;
-  background-color: black;
+  margin-top: 6rem;
   border: solid 1px red;
+}
 
-  a {
-    text-decoration: none;
-    color: white;
-    &:hover {
-      color: blue;
-    }
+a {
+  text-decoration: none;
+  &:hover {
+    color: #ffd43b;
   }
+}
+
+h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4em;
 }
