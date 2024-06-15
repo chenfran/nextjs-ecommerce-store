@@ -28,6 +28,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
+        <h1 className="text-3xl font-bold underline">Hello world!</h1>
         <NavBar />
         {children}
         <CookieBanner />

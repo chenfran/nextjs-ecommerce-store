@@ -1,5 +1,9 @@
 # Next.js Ecommerce Store
 
+To start the project
+
+First run the migration with the following command pnpm migrate up
+
 Design and develop an ecommerce store using Next.js. It should have the following:
 
 - A Products page (where all the products are listed)
