@@ -1,4 +1,4 @@
-import './globals.scss';
+import './globals.css';
 import localFont from 'next/font/local';
 import CookieBanner from './components/CookieBanner';
 import Footer from './components/footer';
