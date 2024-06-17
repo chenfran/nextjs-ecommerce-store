@@ -6,13 +6,4 @@ const config = {
   },
 };
 
-module.exports = config;
-
-// export default config;
-
-// export default {
-//   plugins: {
-//     tailwindcss: {},
-//     autoprefixer: {},
-//   },
-// }
+export default config;

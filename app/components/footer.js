@@ -1,3 +1,9 @@
 export default function Footer() {
-  return <footer>Footer: Created by Franziska Chen, Vienna 2024</footer>;
+  return (
+    <footer className="footer footer-center p-4 bg-neutral text-neutral-content">
+      <aside>
+        <p>Created by Franziska Chen, Vienna 2024</p>
+      </aside>
+    </footer>
+  );
 }

@@ -37,125 +37,180 @@ export default function CheckoutForm() {
   }
 
   return (
-    <div>
-      <div>
-        <div>
-          <form>
-            <h2>Shipping Address</h2>
-            <label htmlFor="First name">First name</label>
-            <input
-              placeholder="First name"
-              id="First name"
-              value={firstName}
-              onChange={(event) => setFirstName(event.currentTarget.value)}
-              data-test-id="checkout-first-name"
-              required
-            />
-            <label htmlFor="Last name">Last name</label>
-            <input
-              placeholder="Last name"
-              id="Last name"
-              value={lastName}
-              onChange={(event) => setLastName(event.currentTarget.value)}
-              data-test-id="checkout-last-name"
-              required
-            />
-            <label htmlFor="Email">E-Mail</label>
-            <input
-              type="email"
-              placeholder="E-Mail"
-              id="Email"
-              value={email}
-              onChange={(event) => setEmail(event.currentTarget.value)}
-              data-test-id="checkout-email"
-              required
-            />
-            <label htmlFor="Address">Address</label>
-            <input
-              placeholder="Address"
-              id="Address"
-              value={address}
-              onChange={(event) => setAddress(event.currentTarget.value)}
-              data-test-id="checkout-address"
-              required
-            />
-            <label htmlFor="City">City</label>
-            <input
-              placeholder="City"
-              id="City"
-              value={city}
-              onChange={(event) => setCity(event.currentTarget.value)}
-              data-test-id="checkout-city"
-              required
-            />
-            <label htmlFor="Postal code">Postal code</label>
-            <input
-              placeholder="Postal code"
-              id="Postal code"
-              value={postalCode}
-              onChange={(event) => setPostalCode(event.currentTarget.value)}
-              data-test-id="checkout-postal-code"
-              required
-            />
-            <label htmlFor="Country">Country</label>
-            <input
-              placeholder="Country"
-              id="Country"
-              value={country}
-              onChange={(event) => setCountry(event.currentTarget.value)}
-              data-test-id="checkout-country"
-              required
-            />
-            <hr />
-            <h2>Payment Information</h2>
-            <label htmlFor="Credit card">Credit Card</label>
-            <input
-              placeholder="Credit Card"
-              id="Credit card"
-              value={creditCard}
-              onChange={(event) => setCreditCard(event.currentTarget.value)}
-              data-test-id="checkout-credit-card"
-              required
-            />
-            <label htmlFor="Expiration date">Expiration date</label>
-            <input
-              placeholder="MM / YYYY"
-              id="Expiration date"
-              value={expirationDate}
-              onChange={(event) => setExpirationDate(event.currentTarget.value)}
-              data-test-id="checkout-expiration-date"
-              required
-            />
-            <label htmlFor="Security code">Security code</label>
-            <input
-              placeholder="Security code"
-              id="Security code"
-              value={securityCode}
-              onChange={(event) => setSecurityCode(event.currentTarget.value)}
-              data-test-id="checkout-security-code"
-              required
-            />
-            <button
-              onClick={clearAllInputFields}
-              disabled={
-                !firstName ||
-                !lastName ||
-                !email ||
-                !address ||
-                !city ||
-                !postalCode ||
-                !country ||
-                !creditCard ||
-                !expirationDate ||
-                !securityCode
-              }
-              data-test-id="checkout-confirm-order"
-            >
-              Complete Purchase
-            </button>
-          </form>
-        </div>
-      </div>
-    </div>
+    <>
+      <h2>Shipping Address</h2>
+      <label
+        className="input input-bordered flex items-center gap-2 my-2"
+        htmlFor="First name"
+      >
+        First name
+        <input
+          className="grow"
+          placeholder="First name"
+          value={firstName}
+          onChange={(event) => setFirstName(event.currentTarget.value)}
+          data-test-id="checkout-first-name"
+          required
+        />
+      </label>
+
+      <label
+        className="input input-bordered flex items-center gap-2 mb-2"
+        htmlFor="Last name"
+      >
+        Last name
+        <input
+          className="grow"
+          placeholder="Last name"
+          value={lastName}
+          onChange={(event) => setLastName(event.currentTarget.value)}
+          data-test-id="checkout-last-name"
+          required
+        />
+      </label>
+
+      <label
+        className="input input-bordered flex items-center gap-2 mb-2"
+        htmlFor="Email"
+      >
+        E-Mail
+        <input
+          className="grow"
+          type="email"
+          placeholder="E-Mail"
+          value={email}
+          onChange={(event) => setEmail(event.currentTarget.value)}
+          data-test-id="checkout-email"
+          required
+        />
+      </label>
+
+      <label
+        className="input input-bordered flex items-center gap-2 mb-2"
+        htmlFor="Address"
+      >
+        Address
+        <input
+          className="grow"
+          placeholder="Address"
+          value={address}
+          onChange={(event) => setAddress(event.currentTarget.value)}
+          data-test-id="checkout-address"
+          required
+        />
+      </label>
+
+      <label
+        className="input input-bordered flex items-center gap-2 mb-2"
+        htmlFor="City"
+      >
+        City
+        <input
+          className="grow"
+          placeholder="City"
+          value={city}
+          onChange={(event) => setCity(event.currentTarget.value)}
+          data-test-id="checkout-city"
+          required
+        />
+      </label>
+
+      <label
+        className="input input-bordered flex items-center gap-2 mb-2"
+        htmlFor="Postal code"
+      >
+        Postal code
+        <input
+          className="grow"
+          placeholder="Postal code"
+          value={postalCode}
+          onChange={(event) => setPostalCode(event.currentTarget.value)}
+          data-test-id="checkout-postal-code"
+          required
+        />
+      </label>
+
+      <label
+        className="input input-bordered flex items-center gap-2 mb-2"
+        htmlFor="Country"
+      >
+        Country
+        <input
+          className="grow"
+          placeholder="Country"
+          value={country}
+          onChange={(event) => setCountry(event.currentTarget.value)}
+          data-test-id="checkout-country"
+          required
+        />
+      </label>
+
+      <hr />
+      <h2>Payment Information</h2>
+      <label
+        className="input input-bordered flex items-center gap-2 mb-2"
+        htmlFor="Credit card"
+      >
+        Credit Card
+        <input
+          className="grow"
+          placeholder="Credit Card"
+          value={creditCard}
+          onChange={(event) => setCreditCard(event.currentTarget.value)}
+          data-test-id="checkout-credit-card"
+          required
+        />
+      </label>
+
+      <label
+        className="input input-bordered flex items-center gap-2 mb-2"
+        htmlFor="Expiration date"
+      >
+        Expiration date
+        <input
+          className="grow"
+          placeholder="MM / YYYY"
+          value={expirationDate}
+          onChange={(event) => setExpirationDate(event.currentTarget.value)}
+          data-test-id="checkout-expiration-date"
+          required
+        />
+      </label>
+
+      <label
+        className="input input-bordered flex items-center gap-2 mb-2"
+        htmlFor="Security code"
+      >
+        Security code
+        <input
+          className="grow"
+          placeholder="Security code"
+          value={securityCode}
+          onChange={(event) => setSecurityCode(event.currentTarget.value)}
+          data-test-id="checkout-security-code"
+          required
+        />
+      </label>
+
+      <button
+        className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+        onClick={clearAllInputFields}
+        disabled={
+          !firstName ||
+          !lastName ||
+          !email ||
+          !address ||
+          !city ||
+          !postalCode ||
+          !country ||
+          !creditCard ||
+          !expirationDate ||
+          !securityCode
+        }
+        data-test-id="checkout-confirm-order"
+      >
+        Complete Purchase
+      </button>
+    </>
   );
 }

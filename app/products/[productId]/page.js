@@ -36,8 +36,10 @@ export default async function SingleProductPage(props) {
 
   return (
     <div>
-      <h1>{singleProduct.name}</h1>
-      <div>
+      <h1 className="text-5xl font-bold text-pink-500 m-3">
+        {singleProduct.name}
+      </h1>
+      <div className="grid grid-cols-2 gap-2">
         <div>
           <Image
             src={`/${singleProduct.name.toLowerCase()}.webp`}
@@ -62,6 +64,25 @@ export default async function SingleProductPage(props) {
           <span> EUR</span>
           <SetQuantityToCartForm productId={singleProduct.id} />
           <div>{shoppingCartToDisplay?.quantity}</div>
+        </div>
+      </div>
+
+      <div className="stats bg-primary text-primary-content">
+        <div className="stat">
+          <div className="stat-title">Account balance</div>
+          <div className="stat-value">$89,400</div>
+          <div className="stat-actions">
+            <button className="btn btn-sm btn-success">Add funds</button>
+          </div>
+        </div>
+
+        <div className="stat">
+          <div className="stat-title">Current balance</div>
+          <div className="stat-value">$89,400</div>
+          <div className="stat-actions">
+            <button className="btn btn-sm">Withdrawal</button>
+            <button className="btn btn-sm">Deposit</button>
+          </div>
         </div>
       </div>
     </div>
