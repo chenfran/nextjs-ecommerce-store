@@ -10,13 +10,13 @@ export default async function Products() {
   const products = await getProductsInsecure();
 
   return (
-    <div className="hero-overlay bg-opacity-60">
-      <h1 className="text-5xl font-bold p-4">All Products</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <div className="hero-overlay bg-slate-200">
+      <h1 className="text-5xl font-bold p-10">All Products</h1>
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9">
         {products.map((product) => {
           return (
             <div
-              className="card w-96 bg-amber-200 shadow-xl mx-4 overflow-hidden"
+              className="card w-96 bg-neutral-50 shadow-xl mx-4 overflow-hidden"
               key={`product-${product.id}`}
             >
               <Link
@@ -38,7 +38,9 @@ export default async function Products() {
                     {product.quantities}
                   </div>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+                    <button className="btn btn-primary bg-slate-700">
+                      Buy Now
+                    </button>
                   </div>
                 </div>
               </Link>
