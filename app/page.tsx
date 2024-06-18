@@ -64,7 +64,10 @@ export default function Home() {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <button className="btn btn-primary">GO TO ALL PRODUCTS</button>
+
+          <Link href="/products" className="btn btn-primary">
+            GO TO ALL PRODUCTS
+          </Link>
         </div>
       </div>
     </div>
