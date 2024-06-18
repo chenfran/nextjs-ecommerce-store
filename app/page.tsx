@@ -9,7 +9,7 @@ export default function Home() {
           'url(https://look-what-i-made.com/wp-content/uploads/iron-pearls-love-S-C.jpg)',
       }}
     >
-      <div className="hero-overlay bg-opacity-60"></div>
+      <div className="hero-overlay bg-opacity-60" />
       <div className="hero-content text-center text-neutral-content">
         <div className="max-w-md">
           <h1 className="mb-5 text-5xl font-bold">Hello there</h1>

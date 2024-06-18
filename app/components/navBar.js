@@ -1,14 +1,18 @@
 import Link from 'next/link';
+import NavBarForm from './NavBarForm';
 
 export default function NavBar() {
   return (
-    <div className="navbar bg-neutral text-neutral-content">
+    <div className="navbar bg-neutral-50 text-gray-800">
       <div className="flex-1">
         <Link href="/" className="btn btn-ghost text-xl">
           HOME
         </Link>
       </div>
       <div className="flex-none">
+        <Link href="/products" className="btn btn-ghost text-xl">
+          ALL PRODUCTS
+        </Link>
         <div className="dropdown dropdown-end">
           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
             <div className="indicator">
@@ -26,7 +30,9 @@ export default function NavBar() {
                   d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"
                 />
               </svg>
-              <span className="badge badge-sm indicator-item">8</span>
+              <span className="badge badge-sm indicator-item">
+                <NavBarForm />
+              </span>
             </div>
           </div>
           <div
@@ -35,8 +41,9 @@ export default function NavBar() {
             className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
           >
             <div className="card-body">
-              <span className="font-bold text-lg">8 Items</span>
-              <span className="text-info">Subtotal: $999</span>
+              <span className="font-bold text-lg">
+                <NavBarForm /> Items
+              </span>
               <div className="card-actions">
                 <Link
                   href="/shopping-cart"
@@ -48,82 +55,7 @@ export default function NavBar() {
             </div>
           </div>
         </div>
-        <div className="dropdown dropdown-end">
-          <div
-            tabIndex={0}
-            role="button"
-            className="btn btn-ghost btn-circle avatar"
-          >
-            <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg"
-              />
-            </div>
-          </div>
-          <ul
-            tabIndex={0}
-            role="button"
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
-            </li>
-            <li>
-              <a>Settings</a>
-            </li>
-            <li>
-              <a>Logout</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </div>
   );
 }
-
-// import Image from 'next/image';
-// import Link from 'next/link';
-// import NavBarForm from './NavBarForm';
-
-// export default function NavBar() {
-//   return (
-//     <header>
-//       <div className="flex-1">
-//         <Link className="btn btn-ghost text-xl" href="/">
-//           <Image src="/home.svg" alt="/" width={30} height={30} />
-//         </Link>
-//       </div>
-
-//       <div className="flex-none">
-//         <div className="dropdown dropdown-end">
-//           <div tabIndex={0} role="button" className="btn btn-ghost btn-circle">
-//             <div className="indicator">
-//               <Image src="/cart.svg" alt="/" width={30} height={30} />
-//               <span className="badge badge-sm indicator-item">
-//                 <NavBarForm />
-//               </span>
-//             </div>
-//           </div>
-//           <div
-//             tabIndex={0}
-//             className="mt-3 z-[1] card card-compact dropdown-content w-52 bg-base-100 shadow"
-//           >
-//             <div className="card-body">
-//               <span className="font-bold text-lg">
-//                 <NavBarForm />
-//               </span>
-//               <span className="text-info">Subtotal: </span>
-//               <div className="card-actions">
-//                 <button className="btn btn-primary btn-block">View cart</button>
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </div>
-//     </header>
-//   );
-// }
