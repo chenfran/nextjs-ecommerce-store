@@ -32,9 +32,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <NavBar />
-        {children}
-        <Footer />
+        <div className="min-h-screen flex flex-col">
+          <div className="flex-grow">
+            <NavBar />
+            {children}
+            <Footer />
+          </div>
+        </div>
       </body>
     </html>
   );
