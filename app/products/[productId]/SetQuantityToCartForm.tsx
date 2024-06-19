@@ -20,16 +20,18 @@ export default function SetQuantityToCartForm({ productId }: Props) {
   };
 
   return (
-    <form>
+    <form className="flex items-center">
       <input
+        className="input input-bordered w-full max-w-xs mr-2"
         type="number"
         min="1"
         value={quantity}
         onChange={handleChange}
         data-test-id="product-quantity"
       />
+      <br />
       <button
-        className="btn btn-outline btn-secondary"
+        className="btn btn-outline"
         formAction={handleSubmit}
         data-test-id="product-add-to-cart"
       >

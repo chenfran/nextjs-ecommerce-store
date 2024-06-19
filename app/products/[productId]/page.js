@@ -25,63 +25,51 @@ export default async function SingleProductPage(props) {
     notFound();
   }
 
-  const shoppingCartCookies = getCookie('cart');
-  const shoppingCartCookieParse = !shoppingCartCookies
-    ? []
-    : parseJson(shoppingCartCookies);
+  // const shoppingCartCookies = getCookie('cart');
+  // const shoppingCartCookieParse = !shoppingCartCookies
+  //   ? []
+  //   : parseJson(shoppingCartCookies);
 
-  const shoppingCartToDisplay = shoppingCartCookieParse.find((cookie) => {
-    return cookie.id === singleProduct.id;
-  });
+  // const shoppingCartToDisplay = shoppingCartCookieParse.find((cookie) => {
+  //   return cookie.id === singleProduct.id;
+  // });
 
   return (
-    <div>
-      <h1 className="text-5xl font-bold text-pink-500 m-3">
+    <div className="pt-10 pb-20">
+      <h1 className="text-5xl font-bold text-center mb-10">
         {singleProduct.name}
       </h1>
-      <div className="grid grid-cols-2 gap-2">
-        <div>
-          <Image
-            src={`/${singleProduct.name.toLowerCase()}.webp`}
-            alt={singleProduct.name}
-            width={500}
-            height={500}
-            data-test-id="product-image"
-          />
-        </div>
-        <div>
-          <h4>Iron Pearl {singleProduct.name} Earring</h4>
-          <div>
-            Embrace adorable charm with our Iron Pearl Panda Single Earring.
-            This whimsical piece features a playful panda design crafted from
-            premium iron pearls, exuding both cuteness and elegance. Perfect for
-            adding a touch of personality to your look, whether you're heading
-            to a casual outing or a fun-filled event. Elevate your style with
-            the irresistible charm of our Panda Single Earring.
-          </div>
-          <br />
-          <div data-test-id="product-price">{singleProduct.price}</div>
-          <span> EUR</span>
-          <SetQuantityToCartForm productId={singleProduct.id} />
-          <div>{shoppingCartToDisplay?.quantity}</div>
-        </div>
-      </div>
 
-      <div className="stats bg-primary text-primary-content">
-        <div className="stat">
-          <div className="stat-title">Account balance</div>
-          <div className="stat-value">$89,400</div>
-          <div className="stat-actions">
-            <button className="btn btn-sm btn-success">Add funds</button>
-          </div>
-        </div>
-
-        <div className="stat">
-          <div className="stat-title">Current balance</div>
-          <div className="stat-value">$89,400</div>
-          <div className="stat-actions">
-            <button className="btn btn-sm">Withdrawal</button>
-            <button className="btn btn-sm">Deposit</button>
+      <div className="flex justify-center">
+        <div className="card lg:card-side bg-base-100 shadow-xl">
+          <figure>
+            <Image
+              src={`/${singleProduct.name.toLowerCase()}.webp`}
+              alt={singleProduct.name}
+              width={500}
+              height={500}
+              data-test-id="product-image"
+            />
+          </figure>
+          <div className="card-body flex flex-col">
+            <h2 className="card-title">
+              Fuse Beads | {singleProduct.name} Earring
+            </h2>
+            <p>Embrace adorable charm with our {singleProduct.name} Earring.</p>
+            <h3 className="font-bold">Product description</h3>
+            <p>
+              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+              nonumy eirmod tempor invidunt.
+            </p>
+            <div className="flex justify-between items-center">
+              <div className="text-5xl font-bold mr-4">
+                <span data-test-id="product-price">{singleProduct.price}</span>
+                <span>,00 EUR</span>
+              </div>
+              <div className="card-actions">
+                <SetQuantityToCartForm productId={singleProduct.id} />
+              </div>
+            </div>
           </div>
         </div>
       </div>
