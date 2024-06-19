@@ -47,7 +47,7 @@ export default async function ShoppingCart() {
       {shoppingCartWithItems.length === 0 ? (
         <p className="text-center">Your cart is empty.</p>
       ) : (
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="col-span-1 ml-20 bg-orange-100 p-8 rounded-lg shadow-xl">
             <ul>
               {shoppingCartWithItems.map((item) => (
