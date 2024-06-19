@@ -1,6 +1,7 @@
 import './globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
+import CookieBanner from './components/CookieBanner';
 import Footer from './components/footer';
 import NavBar from './components/navBar';
 
@@ -37,6 +38,7 @@ export default function RootLayout({
             <NavBar />
             {children}
             <Footer />
+            <CookieBanner />
           </div>
         </div>
       </body>
