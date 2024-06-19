@@ -1,8 +1,6 @@
 import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { getProductInsecure } from '../../../database/products';
-import { getCookie } from '../../../util/cookies';
-import { parseJson } from '../../../util/json.ts';
 import SetQuantityToCartForm from './SetQuantityToCartForm.tsx';
 
 export async function generateMetadata(props) {
@@ -25,15 +23,6 @@ export default async function SingleProductPage(props) {
     notFound();
   }
 
-  // const shoppingCartCookies = getCookie('cart');
-  // const shoppingCartCookieParse = !shoppingCartCookies
-  //   ? []
-  //   : parseJson(shoppingCartCookies);
-
-  // const shoppingCartToDisplay = shoppingCartCookieParse.find((cookie) => {
-  //   return cookie.id === singleProduct.id;
-  // });
-
   return (
     <div className="pt-10 pb-20">
       <h1 className="text-5xl font-bold text-center mb-10">
@@ -52,15 +41,10 @@ export default async function SingleProductPage(props) {
             />
           </figure>
           <div className="card-body flex flex-col">
-            <h2 className="card-title">
+            <h2 className="card-title text-5xl font-bold mb-4">
               Fuse Beads | {singleProduct.name} Earring
             </h2>
             <p>Embrace adorable charm with our {singleProduct.name} Earring.</p>
-            <h3 className="font-bold">Product description</h3>
-            <p>
-              Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
-              nonumy eirmod tempor invidunt.
-            </p>
             <div className="flex justify-between items-center">
               <div className="text-5xl font-bold mr-4">
                 <span data-test-id="product-price">{singleProduct.price}</span>
