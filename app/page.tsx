@@ -9,16 +9,16 @@ export default function Home() {
           <div className="h-96 carousel carousel-vertical rounded-box">
             <div className="carousel-item h-full">
               <Image
-                src="/dino.webp"
-                alt="Dino Earring"
+                src="/panda.webp"
+                alt="Panda Earring"
                 width={450}
                 height={450}
               />
             </div>
             <div className="carousel-item h-full">
               <Image
-                src="/panda.webp"
-                alt="Panda Earring"
+                src="/dino.webp"
+                alt="Dino Earring"
                 width={450}
                 height={450}
               />
@@ -57,7 +57,7 @@ export default function Home() {
             </div>
           </div>
         </Link>
-        <div>
+        <div className="ml-8">
           <h1 className="text-5xl font-bold">FUSE BEADS | be creative</h1>
           <p className="py-6">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
