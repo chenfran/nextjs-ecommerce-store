@@ -11,7 +11,7 @@ export default async function Products() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center">
-      <h1 className="text-5xl font-bold p-10">All Products</h1>
+      <h1 className="text-5xl font-bold p-10">FUSE BEADS | all products</h1>
       <div className="flex flex-wrap justify-center gap-10">
         {products.map((product) => {
           return (

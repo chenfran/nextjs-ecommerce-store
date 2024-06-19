@@ -42,7 +42,7 @@ export default async function SingleProductPage(props) {
           </figure>
           <div className="card-body flex flex-col">
             <h2 className="card-title text-5xl font-bold mb-4">
-              Fuse Beads | {singleProduct.name} Earring
+              {singleProduct.name} Earring
             </h2>
             <p>Embrace adorable charm with our {singleProduct.name} Earring.</p>
             <div className="flex justify-between items-center">
