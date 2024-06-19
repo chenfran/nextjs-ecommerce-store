@@ -42,47 +42,65 @@ export default async function ShoppingCart() {
   }
 
   return (
-    <div>
-      <h1>Shopping Cart</h1>
+    <div className="pt-10 pb-20">
+      <h1 className="text-5xl font-bold text-center mb-12">Shopping Cart</h1>
       {shoppingCartWithItems.length === 0 ? (
-        <p>Your cart is empty.</p>
+        <p className="text-center">Your cart is empty.</p>
       ) : (
-        <div>
-          <ul>
-            {shoppingCartWithItems.map((item) => (
-              <li key={`item-${item.id}`} data-test-id="cart-product-item.id">
-                <Image
-                  src={`/${item.name.toLowerCase()}.webp`}
-                  alt={item.name}
-                  width={150}
-                  height={150}
-                />
-                {item.name} - {item.price} EUR - Quantity:{' '}
-                <span data-test-id="cart-product-quantity-item.id">
-                  {item.quantity}
-                </span>
-                Product subtotal: {calculateTotalPriceOfOneItem(item.id)}
-                <ShoppingCartForm productId={item.id} />
+        <div className="grid grid-cols-2 gap-8">
+          <div className="col-span-1 ml-20 bg-orange-100 p-8 rounded-lg shadow-xl">
+            <ul>
+              {shoppingCartWithItems.map((item) => (
+                <li
+                  className="flex mb-8 items-center justify-start"
+                  key={`item-${item.id}`}
+                  data-test-id="cart-product-item.id"
+                >
+                  <Image
+                    className="w-24 h-24 object-cover rounded-md"
+                    src={`/${item.name.toLowerCase()}.webp`}
+                    alt={item.name}
+                    width={150}
+                    height={150}
+                  />
+                  <div className="ml-4">
+                    <p className="text-xl font-bold">{item.name}</p>
+                    <p>{item.price}.00 EUR</p>
+                    <ShoppingCartForm productId={item.id} />
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className="col-span-1 bg-stone-200 p-8 rounded-lg shadow-xl">
+            <h2 className="text-3xl font-bold mb-4">Order Summary</h2>
+            <ul>
+              {shoppingCartWithItems.map((item) => (
+                <li key={`item-${item.id}`}>
+                  <p className="mt-4 mb-4 font-bold">{item.name}</p>
+                  <p>Price: {item.price}.00 EUR</p>
+
+                  <span>Quantity: </span>
+                  <span data-test-id="cart-product-quantity-item.id">
+                    {item.quantity}
+                  </span>
+
+                  <span>, Product subtotal: </span>
+                  <span>{calculateTotalPriceOfOneItem(item.id)}</span>
+                  <span> EUR</span>
+                </li>
+              ))}
+              <li className="border-t border-gray-400 pt-4 mt-4">
+                <span>Total price: </span>
+                <span data-test-id="cart-total">{calculateTotalPrice()}</span>
+                <span> EUR</span>
               </li>
-            ))}
-          </ul>
-          <h2>Order Summary</h2>
-          <ul>
-            {shoppingCartWithItems.map((item) => (
-              <li key={`item-${item.id}`}>
-                {item.name} {item.price} EUR - Quantity: {item.quantity} -
-                Product subtotal: {calculateTotalPriceOfOneItem(item.id)}
-              </li>
-            ))}
-            <li>
-              Total price:{' '}
-              <span data-test-id="cart-total">{calculateTotalPrice()}</span> EUR
-            </li>
-          </ul>
+            </ul>
+            <ProccedToCheckout />
+          </div>
         </div>
       )}
-
-      <ProccedToCheckout />
     </div>
   );
 }

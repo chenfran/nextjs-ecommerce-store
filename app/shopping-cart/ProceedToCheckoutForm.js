@@ -10,7 +10,11 @@ export default function ProccedToCheckout() {
   };
 
   return (
-    <button onClick={handleClick} data-test-id="cart-checkout">
+    <button
+      className="btn btn-outline bg-slate-800 text-neutral-100 mt-4"
+      onClick={handleClick}
+      data-test-id="cart-checkout"
+    >
       Proceed to checkout
     </button>
   );

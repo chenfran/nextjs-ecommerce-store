@@ -48,7 +48,7 @@ export default async function SingleProductPage(props) {
             <div className="flex justify-between items-center">
               <div className="text-5xl font-bold mr-4">
                 <span data-test-id="product-price">{singleProduct.price}</span>
-                <span>,00 EUR</span>
+                <span>.00 EUR</span>
               </div>
               <div className="card-actions">
                 <SetQuantityToCartForm productId={singleProduct.id} />
