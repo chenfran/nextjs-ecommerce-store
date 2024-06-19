@@ -3,7 +3,7 @@ import NavBarForm from './NavBarForm';
 
 export default function NavBar() {
   return (
-    <div className="navbar bg-neutral-50 text-gray-800">
+    <div className="navbar bg-neutral-50 text-gray-800 p-5">
       <div className="flex-1">
         <Link href="/" className="btn btn-ghost text-xl">
           HOME

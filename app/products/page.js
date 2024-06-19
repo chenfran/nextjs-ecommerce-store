@@ -10,13 +10,13 @@ export default async function Products() {
   const products = await getProductsInsecure();
 
   return (
-    <div className="hero-overlay bg-slate-200">
+    <div className="min-h-screen flex flex-col items-center justify-center">
       <h1 className="text-5xl font-bold p-10">All Products</h1>
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-9">
+      <div className="flex flex-wrap justify-center gap-10">
         {products.map((product) => {
           return (
             <div
-              className="card w-96 bg-neutral-50 shadow-xl mx-4 overflow-hidden"
+              className="card w-96 bg-base-100 shadow-xl overflow-hidden m-10"
               key={`product-${product.id}`}
             >
               <Link
@@ -31,16 +31,11 @@ export default async function Products() {
                     height={400}
                   />
                 </figure>
-                <div className="card-body p-4">
-                  <h2 className="text-xl font-semibold mb-2">{product.name}</h2>
-                  <div className="text-lg mb-2">{product.price} EUR</div>
-                  <div className="text-sm text-gray-500">
-                    {product.quantities}
-                  </div>
+                <div className="card-body">
+                  <h2 className="card-title">{product.name}</h2>
+                  <p>{product.price} EUR</p>
                   <div className="card-actions justify-end">
-                    <button className="btn btn-primary bg-slate-700">
-                      Buy Now
-                    </button>
+                    <button className="btn btn-outline">Buy now</button>
                   </div>
                 </div>
               </Link>
