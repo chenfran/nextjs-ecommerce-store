@@ -7,7 +7,7 @@ export const metadata = {
 export default function Checkout() {
   return (
     <>
-      <h1>Checkout</h1>
+      <h1 className="text-5xl font-bold text-center mt-8 mb-12">Checkout</h1>
       <CheckoutForm />
     </>
   );

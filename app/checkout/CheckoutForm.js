@@ -37,8 +37,8 @@ export default function CheckoutForm() {
   }
 
   return (
-    <>
-      <h2>Shipping Address</h2>
+    <div className="ml-10 mr-10">
+      <h2 className="text-3xl font-bold ml-4 mb-4">Shipping Address</h2>
       <label
         className="input input-bordered flex items-center gap-2 my-2"
         htmlFor="First name"
@@ -46,7 +46,6 @@ export default function CheckoutForm() {
         First name
         <input
           className="grow"
-          placeholder="First name"
           value={firstName}
           onChange={(event) => setFirstName(event.currentTarget.value)}
           data-test-id="checkout-first-name"
@@ -61,7 +60,6 @@ export default function CheckoutForm() {
         Last name
         <input
           className="grow"
-          placeholder="Last name"
           value={lastName}
           onChange={(event) => setLastName(event.currentTarget.value)}
           data-test-id="checkout-last-name"
@@ -77,7 +75,7 @@ export default function CheckoutForm() {
         <input
           className="grow"
           type="email"
-          placeholder="E-Mail"
+          placeholder="name@gmail.com"
           value={email}
           onChange={(event) => setEmail(event.currentTarget.value)}
           data-test-id="checkout-email"
@@ -92,7 +90,6 @@ export default function CheckoutForm() {
         Address
         <input
           className="grow"
-          placeholder="Address"
           value={address}
           onChange={(event) => setAddress(event.currentTarget.value)}
           data-test-id="checkout-address"
@@ -107,7 +104,6 @@ export default function CheckoutForm() {
         City
         <input
           className="grow"
-          placeholder="City"
           value={city}
           onChange={(event) => setCity(event.currentTarget.value)}
           data-test-id="checkout-city"
@@ -122,7 +118,6 @@ export default function CheckoutForm() {
         Postal code
         <input
           className="grow"
-          placeholder="Postal code"
           value={postalCode}
           onChange={(event) => setPostalCode(event.currentTarget.value)}
           data-test-id="checkout-postal-code"
@@ -137,7 +132,6 @@ export default function CheckoutForm() {
         Country
         <input
           className="grow"
-          placeholder="Country"
           value={country}
           onChange={(event) => setCountry(event.currentTarget.value)}
           data-test-id="checkout-country"
@@ -145,8 +139,7 @@ export default function CheckoutForm() {
         />
       </label>
 
-      <hr />
-      <h2>Payment Information</h2>
+      <h2 className="text-3xl font-bold mt-8 ml-4 mb-4">Payment Information</h2>
       <label
         className="input input-bordered flex items-center gap-2 mb-2"
         htmlFor="Credit card"
@@ -154,7 +147,6 @@ export default function CheckoutForm() {
         Credit Card
         <input
           className="grow"
-          placeholder="Credit Card"
           value={creditCard}
           onChange={(event) => setCreditCard(event.currentTarget.value)}
           data-test-id="checkout-credit-card"
@@ -184,7 +176,6 @@ export default function CheckoutForm() {
         Security code
         <input
           className="grow"
-          placeholder="Security code"
           value={securityCode}
           onChange={(event) => setSecurityCode(event.currentTarget.value)}
           data-test-id="checkout-security-code"
@@ -193,7 +184,7 @@ export default function CheckoutForm() {
       </label>
 
       <button
-        className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg"
+        className="btn btn-outline bg-slate-800 text-neutral-100 mt-4 mb-8"
         onClick={clearAllInputFields}
         disabled={
           !firstName ||
@@ -211,6 +202,6 @@ export default function CheckoutForm() {
       >
         Complete Purchase
       </button>
-    </>
+    </div>
   );
 }
