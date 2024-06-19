@@ -19,7 +19,7 @@ export default function CookieBanner() {
 
   return (
     <div
-      className={`fixed bottom-0 right-0 m-4 transition-transform duration-300 ${areCookiesAccepted ? 'transform translate-x-full' : 'transform translate-x-0'}`}
+      className={`fixed bottom-0 right-0 m-4 transition-transform duration-300 ${areCookiesAccepted ? 'translate-x-full opacity-0 pointer-events-none' : 'translate-x-0'}`}
     >
       <div className="card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
