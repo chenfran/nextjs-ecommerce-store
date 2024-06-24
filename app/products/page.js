@@ -21,7 +21,7 @@ export default async function Products() {
             >
               <Link
                 href={`/products/${product.id}`}
-                data-test-id="product-product.id"
+                data-test-id={`products-${product.id}`}
               >
                 <figure>
                   <Image
