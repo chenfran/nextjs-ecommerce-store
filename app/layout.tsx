@@ -87,9 +87,9 @@ export default function RootLayout({
                       </span>
                       <div className="card-actions">
                         <Link
-                          data-test-id="cart-link"
                           href="/shopping-cart"
                           className="btn btn-primary btn-block"
+                          data-test-id="cart-link"
                         >
                           View cart
                         </Link>
