@@ -50,6 +50,13 @@ export default function RootLayout({
                 >
                   ALL PRODUCTS
                 </Link>
+                <Link
+                  href="/shopping-cart"
+                  className="btn btn-ghost text-xl"
+                  data-test-id="cart-link"
+                >
+                  CART
+                </Link>
                 <div className="dropdown dropdown-end">
                   <div
                     tabIndex={0}
@@ -89,7 +96,6 @@ export default function RootLayout({
                         <Link
                           href="/shopping-cart"
                           className="btn btn-primary btn-block"
-                          data-test-id="cart-link"
                         >
                           View cart
                         </Link>
