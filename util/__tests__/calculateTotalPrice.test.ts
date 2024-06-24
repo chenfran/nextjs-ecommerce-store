@@ -1,14 +1,11 @@
 import { expect, test } from '@jest/globals';
-import { add } from '../math';
+import { calculateTotalPrice } from '../calculateTotalPrice';
 
-test('adds two numbers', () => {
-  expect(add(1, 2)).toBe(3);
-  expect(add(100, 200)).toBe(300);
-});
-
-test('throws an error when arguments are not numbers', () => {
-  // @ts-expect-error testing incorrect arguments
-  expect(() => add(1, '1')).toThrow('Pass only numbers!');
-  // @ts-expect-error testing incorrect arguments
-  expect(() => add('asd', '1')).toThrow('Pass only numbers!');
+test('calculates the total price of items in the shopping cart', () => {
+  const shoppingCartWithItems = [
+    { price: 10, quantity: 2 },
+    { price: 10, quantity: 3 },
+    { price: 10, quantity: 1 },
+  ];
+  expect(calculateTotalPrice(shoppingCartWithItems)).toBe('60.00');
 });
