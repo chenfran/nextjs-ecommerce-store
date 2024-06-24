@@ -54,7 +54,7 @@ export default async function ShoppingCart() {
                 <li
                   className="flex mb-8 items-center justify-start"
                   key={`item-${item.id}`}
-                  data-test-id="cart-product-item.id"
+                  data-test-id={`cart-product-${item.id}`}
                 >
                   <Image
                     className="w-24 h-24 object-cover rounded-md"
@@ -82,7 +82,7 @@ export default async function ShoppingCart() {
                   <p>Price: {item.price}.00 EUR</p>
 
                   <span>Quantity: </span>
-                  <span data-test-id="cart-product-quantity-item.id">
+                  <span data-test-id={`cart-product-quantity-${item.id}`}>
                     {item.quantity}
                   </span>
 
