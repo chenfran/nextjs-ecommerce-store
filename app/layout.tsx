@@ -44,9 +44,9 @@ export default function RootLayout({
               </div>
               <div className="flex-none">
                 <Link
-                  data-test-id="products-link"
                   href="/products"
                   className="btn btn-ghost text-xl"
+                  data-test-id="products-link"
                 >
                   ALL PRODUCTS
                 </Link>
