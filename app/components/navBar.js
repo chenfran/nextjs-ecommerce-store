@@ -3,14 +3,18 @@ import NavBarForm from './NavBarForm';
 
 export default function NavBar() {
   return (
-    <div className="navbar bg-neutral-50 text-gray-800 p-5">
+    <header className="navbar bg-neutral-50 text-gray-800 p-5">
       <div className="flex-1">
         <Link href="/" className="btn btn-ghost text-xl">
           HOME
         </Link>
       </div>
       <div className="flex-none">
-        <Link href="/products" className="btn btn-ghost text-xl">
+        <Link
+          data-test-id="products-link"
+          href="/products"
+          className="btn btn-ghost text-xl"
+        >
           ALL PRODUCTS
         </Link>
         <div className="dropdown dropdown-end">
@@ -46,6 +50,7 @@ export default function NavBar() {
               </span>
               <div className="card-actions">
                 <Link
+                  data-test-id="cart-link"
                   href="/shopping-cart"
                   className="btn btn-primary btn-block"
                 >
@@ -56,6 +61,6 @@ export default function NavBar() {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
